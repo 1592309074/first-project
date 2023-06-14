@@ -1,0 +1,255 @@
+//引入vue-router
+import { createRouter, createWebHistory } from 'vue-router'
+//ES6  import输入  export 输出
+// 模块化 默认私有，如何被别人使用？
+// 通过export 输出
+// 如何使用
+// export default 默认输出
+import Index from '@/views/static/index.vue'
+import LayoutAdmin from '@/layout/admin/index.vue'
+//白名单
+const whiteList = ['/', '/login']
+import { useUserStore } from '../store/user'
+
+//路由表
+const routes = [
+<<<<<<< HEAD
+  {
+    path: '/', //访问路径 http://127.0.0.1:5173/cx/XfDGdOkjVo7deIxQjurcf8BEnNf
+    name: 'home', //命名路由
+    component: Index, //key:value  默认//页面组件 components 普通组件 页面组件和普通组件是一对多
+  },
+  {
+    path:'/dormitory',
+    name:'dormitory',
+    component:()=>import('@/views/admin/dormitory.vue')
+  },
+  ,
+  {
+    path:'/classinfo',
+    name:'classinfo',
+    component:()=>import('@/views/admin/classinfo.vue')
+  },
+  {
+    path:'/admin',
+    name:'admin',
+    component:()=>import('@/views/admin/admin.vue')
+  },
+  {
+    path:'/department',
+    name:'department',
+    component:()=>import('@/views/admin/department.vue')
+  },
+  {
+    path:'/role',
+    name:'role',
+    component:()=>import('@/views/admin/role.vue'),
+  },
+   {
+    path: '/menu_rule',
+    name: 'menu_rule',
+    component: () => import('@/views/admin/menu_rule.vue'),
+  },
+  {
+    path: '/backend_api',
+    name: 'backend_api',
+    component: () => import('@/views/admin/backend_api.vue'),
+  },
+  
+  {
+    path: '/permission',
+    name: 'permission',
+    component: () => import('@/views/admin/permission.vue'),
+  },
+  {
+    path: '/adcate',
+    name: 'adCate',
+    component: () => import('@/views/static/adCate.vue'), // 懒加载
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('@/views/static/login.vue'), // 懒加载
+  },
+  {
+    path: '/admin',
+    name: 'admin',
+    component: LayoutAdmin,
+    children: [
+      {
+        path: '',
+        name: 'admin-index',
+        component: () => import('@/views/admin/index.vue'),
+      },
+      {
+        path: 'info',
+        name: 'admin-info',
+        component: () => import('@/views/admin/info.vue'),
+      },
+      {
+        path: 'logout',
+        name: 'admin-logout',
+        component: () => import('@/views/admin/logout.vue'),
+      },
+      {
+        path: '/major',
+        name: 'major',
+        component: () => import('@/views/admin/major.vue'),
+      },
+      {
+        path: 'changepassword',
+        name: 'admin-changepassword',
+        component: () => import('@/views/admin/changepassword.vue'),
+      },
+      {
+        path: 'forgetpassword',
+        name: 'admin-forgetpassword',
+        component: () => import('@/views/admin/forgetpassword.vue'),
+      },
+      {
+        path:'/interviewtype',
+        name:'interviewtype',
+        component:()=> import('@/views/admin/interviewtype.vue')
+      },
+      {
+        path:'/article',
+        name:'article',
+        component:()=> import('@/views/admin/article.vue')
+    
+      },
+      {
+        path:'/GZ',
+        name:'GZ',
+        component:()=> import('@/views/admin/GZ.vue')
+      },
+      {
+        path:'/CJ',
+        name:'CJ',
+        component:()=> import('@/views/admin/CJ.vue')
+      },
+      {
+        path:'/JY',
+        name:'JY',
+        component:()=> import('@/views/admin/JY.vue')
+      },
+      {
+        path:'/KX',
+        name:'KX',
+        component:()=> import('@/views/admin/KX.vue')
+      },
+      {
+        path:'/SH',
+        name:'SH',
+        component:()=> import('@/views/admin/SH.vue')
+      },
+      {
+        path:'/SHH',
+        name:'SHH',
+        component:()=> import('@/views/admin/SHH.vue')
+      },
+      {
+        path:'/YM',
+        name:'YM',
+        component:()=> import('@/views/admin/YM.vue')
+      }
+      
+    ],
+  },
+=======
+    {
+        path: '/',//访问路径 http://127.0.0.1:5173/cx/XfDGdOkjVo7deIxQjurcf8BEnNf 
+        name: 'home', //命名路由
+        component: Index,   //key:value  默认//页面组件 components 普通组件 页面组件和普通组件是一对多
+    },
+    {
+        path: '/classroom-controller',
+        name: 'classroom-controller',
+        component: () => import('../views/admin/classroom-controller.vue')// 懒加载
+    },
+    {
+        path: '/login',
+        name: 'login',
+        component: () => import('../views/static/login.vue')// 懒加载
+    },
+    {
+        path: '/admin',
+        name: 'admin',
+        component: LayoutAdmin,
+        children: [
+            {
+                path: '',
+                name: 'admin-index',
+                component: () => import('@/views/admin/index.vue')
+            },
+            {
+                path: 'info',
+                name: 'admin-info',
+                component: () => import('@/views/admin/info.vue')
+            },
+            {
+                path: 'logout',
+                name: 'admin-logout',
+                component: () => import('@/views/admin/logout.vue')
+            }, {
+                path: 'changepassword',
+                name: 'admin-changepassword',
+                component: () => import('@/views/admin/changepassword.vue')
+            },
+            {
+                path: 'forgetpassword',
+                name: 'admin-forgetpassword',
+                component: () => import('@/views/admin/forgetpassword.vue')
+            },
+<<<<<<< HEAD
+            {
+                path: 'student',
+                name: 'admin-student',
+                component: () => import('@/views/admin/student.vue')
+            }
+=======
+         
+>>>>>>> 832f8be (2003010107林祖源)
+
+        ]
+    },
+
+
+
+    {
+        path: '/:pathMatch(.*)*',
+        name: '404',
+        component: () => import('../views/404.vue')// 懒加载  
+    }
+>>>>>>> 1da1d93 (2003010133张希尧)
+
+  {
+    path: '/:pathMatch(.*)*',
+    name: '404',
+    component: () => import('../views/404.vue'), // 懒加载
+  },
+]
+const router = createRouter({
+  //模式
+  history: createWebHistory(),
+  routes,
+})
+//前置路由守卫
+//用户状态 user.js
+router.beforeEach((to, from, next) => {
+  const userStore = useUserStore()
+
+  if (whiteList.includes(to.path)) {
+    // 在白名单中的路径可以无需验证直接访问
+    next()
+  } else {
+    if (userStore.token && userStore.token.length > 0) {
+      // 用户已经登录，允许访问请求的路径
+      next()
+    } else {
+      // 用户未登录，重定向到登录页面
+      next({ name: 'login' })
+    }
+  }
+})
+
+export default router
